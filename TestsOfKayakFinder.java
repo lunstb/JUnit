@@ -1,11 +1,11 @@
 import static org.junit.Assert.*;
 
-import imports.org.junit.Test;
+import org.junit.Test;
 
 /**
  * Quick and dirty tests of Kayak finder program
  * Not an exhaustive set of tests, but a good start
- * @author Nathan Gossett, Berke Lunstad
+ * @author Nathan Gossett
  *
  */
 public class TestsOfKayakFinder {
@@ -37,24 +37,6 @@ public class TestsOfKayakFinder {
 		char[][] testEmpty2 = {{},{},{}};
 		assertFalse(Kayak.containsKayak(testEmpty1));
 		assertFalse(Kayak.containsKayak(testEmpty2));
-	}
-	
-	/*
-	 * Make sure it fails on jagged arrays. Dr Gosset hasn't responded so maybe they are ok?
-	 */
-	@Test
-	public void jaggedArray() {
-		char[][] testJagged = {{'A', 'K', 'A', 'Y', 'Y', 'Y', 'A', 'K', 'K', 'K'},
-				{'K', 'K', 'K', 'Y', 'K', 'A', 'A', 'A', 'K', 'Y','e'},
-				{'K', 'A', 'K', 'K', 'A', 'K', 'Y', 'Y', 'Y'},
-				{'Y', 'K', 'Y', 'Y', 'A', 'A', 'K', 'K', 'Y', 'A'},
-				{'Y', 'K', 'K', 'K', 'K', 'Y', 'A', 'A', 'K'},
-				{'A', 'Y', 'Y', 'Y', 'K', 'A', 'A', 'Y', 'Y', 'K'},
-				{'Y', 'Y', 'A', 'A', 'A', 'A', 'Y', 'Y', 'A', 'K'},
-				{'A', 'A', 'K', 'Y', 'A', 'A', 'Y', 'Y', 'Y', 'Y'},
-				{'Y', 'Y', 'K', 'A', 'K', 'K', 'K', 'Y', 'Y', 'A'},
-				{'A', 'K', 'A', 'Y', 'A', 'K', 'Y', 'Y', 'A', 'K'}};
-		assertFalse(Kayak.containsKayak(testJagged));
 	}
 	
 	/**
