@@ -39,6 +39,35 @@ public class TestsOfKayakFinder {
 		assertFalse(Kayak.containsKayak(testEmpty2));
 	}
 	
+	/* 
+	 * Make sure it works for small sets
+	 */
+	@Test
+	public void smallSetsPassing() {
+		char[][] smallSetHorizontalPass = {{'K','A','Y','A','K'}};
+		char[][] smallSetVertPass = {{'K'},{'A'},{'Y'},{'A'},{'K'}};
+		assertTrue(Kayak.containsKayak(smallSetVertPass));
+		assertTrue(Kayak.containsKayak(smallSetHorizontalPass));	
+	}
+	@Test
+	public void smallSetsFailing() {
+		char[][] smallSetHorizontalPass = {{'K','A','A','K'}};
+		char[][] smallSetVertPass = {{'K'},{'A'},{'E'},{'A'},{'K'}};
+		assertFalse(Kayak.containsKayak(smallSetVertPass));
+		assertFalse(Kayak.containsKayak(smallSetHorizontalPass));	
+	}
+	
+	/*
+	 * Just some weird edge cases that might somehow fail
+	 */
+	@Test
+	public void edgeCaseFailures() {
+		char[][] twoYFailHorizontal = {{'K','A','Y','Y','A','K'}};
+		char[][] twoYFailVert = {{'K'},{'A'},{'Y'},{'Y'},{'A'},{'K'}};
+		assertFalse(Kayak.containsKayak(twoYFailHorizontal));
+		assertFalse(Kayak.containsKayak(twoYFailVert));	
+	}
+	
 	/**
 	 * Find a horizontal kayak
 	 */
